@@ -24,6 +24,7 @@ define('_PATH_CACHE', dirname(_PATH_ROOT) . DIRECTORY_SEPARATOR . 'cache');
 
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'file' . DIRECTORY_SEPARATOR . 'lifefile.php';
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . 'lifecache.php';
+require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'simplehtmldom' . DIRECTORY_SEPARATOR . 'simple_html_dom.php';
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'radio.php';
 
 

@@ -13,7 +13,7 @@
  * @license         General Software Licence (https://web.labs.coop/public/legal/general-software-license/10,3.html)
  * @package         life
  * @since           1.0.1
- * @author          Simon Roberts <meshy@labs.coop>
+ * @author          Simon Roberts <wishcraft@users.sourceforge.net>
  * @subpackage		file
  * @description		Digital Signature Generation & API Services
  * @link			https://life.labs.coop Digital Signature Generation & API Services

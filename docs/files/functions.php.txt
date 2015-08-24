@@ -10,10 +10,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @copyright       Chronolabs Cooperative http://labs.coop
- * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+ * @license         General Public License version 3 (http://labs.coop/briefs/legal/general-public-licence/13,3.html)
  * @package         lookups
  * @since           1.1.2
- * @author          Simon Roberts <meshy@labs.coop>
+ * @author          Simon Roberts <wishcraft@users.sourceforge.net>
  * @version         $Id: index.php 1000 2013-06-07 01:20:22Z mynamesnot $
  * @subpackage		api
  * @description		Internet Protocol Address Information API Service REST
@@ -24,6 +24,7 @@ define('_PATH_CACHE', dirname(_PATH_ROOT) . DIRECTORY_SEPARATOR . 'cache');
 
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'file' . DIRECTORY_SEPARATOR . 'lifefile.php';
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . 'lifecache.php';
+require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'simplehtmldom' . DIRECTORY_SEPARATOR . 'simple_html_dom.php';
 require_once _PATH_ROOT  . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'radio.php';
 
 
@@ -142,7 +143,7 @@ if (!function_exists("whitelistGetNetBIOSIP")) {
 	*/
 	function whitelistGetNetBIOSIP() {
 		$ret = array();
-		foreach(file(dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR . 'whitelist-domains.txt') as $domain) {
+		foreach(file(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . 'whitelist-domains.txt') as $domain) {
 			$ip = gethostbyname($domain);
 			$ret[$ip] = $ip;
 		}
@@ -282,3 +283,4 @@ if (!class_exists("XmlDomConstruct")) {
 }
 
 ?>
+

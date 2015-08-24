@@ -13,7 +13,7 @@
  * @license         General Software Licence (https://web.labs.coop/public/legal/general-software-license/10,3.html)
  * @package         life
  * @since           1.0.1
- * @author          Simon Roberts <meshy@labs.coop>
+ * @author          Simon Roberts <wishcraft@users.sourceforge.net>
  * @subpackage		cache
  * @description		Digital Signature Generation & API Services
  * @link			https://life.labs.coop Digital Signature Generation & API Services
@@ -105,8 +105,10 @@ class lifeCacheFile extends lifeCacheEngine
      */
     function init($settings = array())
     {
+	if (!is_dir("/tmp/api-cache/life"))
+		mkdir("/tmp/api-cache/life", 0777, true);
         parent::init($settings);
-        $defaults = array('path' => _PATH_CACHE , 'extension' => '.php' , 'prefix' => 'life_' , 'lock' => false , 'serialize' => false , 'duration' => 31556926);
+        $defaults = array('path' => "/tmp/api-cache/life" , 'extension' => '.php' , 'prefix' => 'life_' , 'lock' => false , 'serialize' => false , 'duration' => 31556926);
         $this->settings = array_merge($defaults, $this->settings);
         if (!isset($this->file)) {
             include_once _PATH_ROOT . _DS_ . 'class' . _DS_ . 'file' . _DS_ . 'lifefile.php';
@@ -306,3 +308,4 @@ class lifeCacheFile extends lifeCacheEngine
 }
 
 ?>
+
